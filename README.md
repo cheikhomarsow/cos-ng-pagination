@@ -37,7 +37,7 @@ export class AppModule { }
 use in your templates to add pagination in your view like below
 
 ```javascript
-<cos-ng-pagination [total]="total" [current]="current" [size]="size" (pageChanged)="onPageChanged($event)"></cos-ng-pagination>
+<cos-pagination [total]="total" [current]="current" [size]="size" (pageChanged)="onPageChanged($event)"></cos-pagination>
 ```
 
 #### Options
