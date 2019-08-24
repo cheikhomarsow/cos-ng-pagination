@@ -1,5 +1,5 @@
 {
-  "name": "ng-cos-pagination",
+  "name": "cos-pagination",
   "version": "1.0.0",
   "description": "Angular component that provides pagination. Navigating through the pagination triggers an event that will load the current page",
   "license": "MIT",
