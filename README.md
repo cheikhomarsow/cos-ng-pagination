@@ -1,27 +1,77 @@
-# NgPagination
+### Generic Pagination for Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+Angular component that provides pagination. Navigating through the pagination triggers an event that will load the current page.
 
-## Development server
+#### Install
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The module can be installed using [npm](https://www.npmjs.com).
 
-## Code scaffolding
+```javascript
+npm i @cos/ng-pagination
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Usage
 
-## Build
+Import **CosNgPaginationModule** from **@cos/ng-pagination**:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```javascript
+import { CosNgPaginationModule } from '@cos/ng-pagination'
+```
 
-## Running unit tests
+Add **CosNgPaginationModule** to the imports of your NgModule:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```javascript
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    CosNgPaginationModule
+  ],
+  exports: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-## Running end-to-end tests
+use in your templates to add pagination in your view like below
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```javascript
+<cos-ng-pagination [total]="total" [current]="current" [size]="size" (pageChanged)="onPageChanged($event)"></cos-ng-pagination>
+```
 
-## Further help
+#### Options
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+*   total
+
+    **[Number]** The total number of items in the database.
+
+*   size
+
+    **[Number]** The number of items to display per page.
+
+*   current
+
+    **[Number]** Current page (active) page number.
+
+*   startFrom
+
+    **[Number]** Start index, should equals to 0 or 1. Default is 1.
+
+*   isDirectionLinksEnabled
+
+    **[boolean]** If set to false, the "previous" and "next" links will not be displayed. Default is true.
+
+*   pageChanged
+
+    **[event handler]** The expression specified will be invoked whenever the page changes via a click on one of the pagination controls. The $event argument will be the number of the new page. This should be used to update the value of the currentPage variable which was passed to the PaginatePipe.
+
+*   language
+
+    **[string]** Default language is **English** (**'en'**). Also **French** (**'fr'**), **Portuguese** (**'pt'**) are available
+
+
+For making the styling work fine, you should included bootstrap to your project.
+
+
+
