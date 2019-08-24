@@ -7,15 +7,15 @@ Angular component that provides pagination. Navigating through the pagination tr
 The module can be installed using [npm](https://www.npmjs.com).
 
 ```javascript
-npm i ng-cos-pagination
+npm i cos-pagination
 ```
 
 #### Usage
 
-Import **CosNgPaginationModule** from **ng-cos-pagination**:
+Import **CosNgPaginationModule** from **cos-pagination**:
 
 ```javascript
-import { CosNgPaginationModule } from 'ng-cos-pagination'
+import { CosNgPaginationModule } from 'cos-pagination'
 ```
 
 Add **CosNgPaginationModule** to the imports of your NgModule:
