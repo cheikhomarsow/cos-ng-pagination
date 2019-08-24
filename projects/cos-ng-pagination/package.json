@@ -1,6 +1,9 @@
 {
   "name": "@cos/ng-pagination",
   "version": "1.0.0",
+  "description": "Angular component that provides pagination. Navigating through the pagination triggers an event that will load the current page",
+  "license": "MIT",
+  "repository": "cheikhomarsow/cos-ng-pagination",
   "peerDependencies": {
     "@angular/common": "^8.2.3",
     "@angular/core": "^8.2.3"
