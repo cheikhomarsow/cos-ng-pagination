@@ -2,7 +2,7 @@
     <ul class="pagination">
         <li class="page-item" *ngIf="isDirectionLinksEnabled !== false" (click)="previewPage()"
             [ngClass]="{disabled: current == startFrom}">
-            <a class="page-link" href="#">{{ previousBtnText }}</a>
+            <a class="page-link" href="javascript:void(0)">{{ previousBtnText }}</a>
         </li>
 
         <ng-container *ngFor="let page of pages; let i = index">
