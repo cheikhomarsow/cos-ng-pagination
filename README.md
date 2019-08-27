@@ -1,6 +1,7 @@
 ### Generic Pagination for Angular
 
 Angular component that provides pagination. Navigating through the pagination triggers an event that will load the current page.
+[DEMO](https://stackblitz.com/edit/angular-qckd5k)
 
 #### Install
 
