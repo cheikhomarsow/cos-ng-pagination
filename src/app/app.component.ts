@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   comments: any;
   size = 5;
   current = 0;
-  total = 500;
+  total = 50;
   startFrom = 0;
   commentsUrl = 'https://jsonplaceholder.typicode.com/comments'
   fullUrl: string;

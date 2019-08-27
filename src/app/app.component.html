@@ -15,6 +15,7 @@
       </tr>
     </tbody>
   </table>
+  
   <cos-pagination [total]="total" [current]="current" [startFrom]="startFrom" [size]="size"
     (pageChanged)="onPageChanged($event)"></cos-pagination>
 
@@ -23,20 +24,24 @@
       <table class="table table-borderless">
         <tbody>
           <tr>
-            <th scope="row">Comments URL</th>
-            <td>{{ commentsUrl }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Current Page</th>
-            <td>{{ startFrom == 0 ? current+1 : current }}</td>
+            <th scope="row">The total number of comments</th>
+            <td>{{ total }}</td>
           </tr>
           <tr>
             <th scope="row">Size</th>
             <td>{{ size }}</td>
           </tr>
           <tr>
+            <th scope="row">Current Page</th>
+            <td>{{ startFrom == 0 ? current+1 : current }}</td>
+          </tr>
+          <tr>
             <th scope="row">Start Index</th>
             <td colspan="2">{{ startFrom }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Comments URL</th>
+            <td>{{ commentsUrl }}</td>
           </tr>
           <tr>
             <th scope="row">Full Url</th>
