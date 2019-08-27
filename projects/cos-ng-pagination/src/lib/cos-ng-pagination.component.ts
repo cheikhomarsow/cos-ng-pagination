@@ -55,7 +55,10 @@ export class CosNgPaginationComponent implements OnInit {
         this.pages.push(current + 2);
       }
     }
-    this.pages.push(parseInt(`${totalPages}`));
+
+    if(this.total > this.size) {
+      this.pages.push(parseInt(`${totalPages}`));
+    }
   }
 
   goToPage(page: number) {
