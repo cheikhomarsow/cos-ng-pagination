@@ -13,6 +13,7 @@ export class CosNgPaginationComponent implements OnInit {
   @Input() size: number;
   @Input() startFrom: number;
   @Input() isDirectionLinksEnabled: boolean;
+  @Input() info: boolean;
   @Input() language: string;
 
   @Output() pageChanged = new EventEmitter();
@@ -32,6 +33,9 @@ export class CosNgPaginationComponent implements OnInit {
     this.startFrom = this.startFrom == 0 ? this.startFrom : 1;
     this.current = this.current < this.startFrom ? this.startFrom : this.current;
     this.totalPages = Math.ceil(this.total / this.size) - 1 + this.startFrom;
+
+    this.info = this.info == false ? this.info : true;
+
     this.initLang();
     this.getInfos();
     this.getPages(this.totalPages, this.current);
