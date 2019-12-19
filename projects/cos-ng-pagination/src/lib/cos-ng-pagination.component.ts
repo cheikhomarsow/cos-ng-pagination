@@ -22,12 +22,18 @@ export class CosNgPaginationComponent implements OnInit {
   defaultLang = 'en';
   nextBtnText: string;
   previousBtnText: string;
+  showingText: string;
+  toText: string;
+  ofText: string;
+  showing: number;
+  to: number;
 
   ngOnInit() {
     this.startFrom = this.startFrom == 0 ? this.startFrom : 1;
     this.current = this.current < this.startFrom ? this.startFrom : this.current;
     this.totalPages = Math.ceil(this.total / this.size) - 1 + this.startFrom;
     this.initLang();
+    this.getInfos();
     this.getPages(this.totalPages, this.current);
   }
 
@@ -85,13 +91,26 @@ export class CosNgPaginationComponent implements OnInit {
     }
   }
 
+  getInfos() {
+    this.showing = ((this.current - this.startFrom) * this.size) + 1;
+    if (this.current == this.totalPages) {
+      this.to = this.total;
+    } else {
+      this.to = this.startFrom == 0 ? (this.current + 1) * this.size : this.current * this.size;
+    }
+  }
+
   onPageChanged() {
     this.pageChanged.emit(this.current);
+    this.getInfos();
   }
 
   initLang() {
     const lang = availableLanguages.includes(this.language) ? this.language : this.defaultLang;
     this.nextBtnText = translations[lang]['sNext']
     this.previousBtnText = translations[lang]['sPrevious']
+    this.showingText = translations[lang]['sShowing']
+    this.toText = translations[lang]['sTo']
+    this.ofText = translations[lang]['sOf']
   }
 }
