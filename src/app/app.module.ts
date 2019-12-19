@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { CosNgPaginationModule } from '../../projects/cos-ng-pagination/src/lib/cos-ng-pagination.module';
+import { CosNgPaginationModule } from 'cos-ng-pagination';
 
 import { AppComponent } from './app.component';
 
