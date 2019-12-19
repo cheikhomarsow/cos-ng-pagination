@@ -71,6 +71,9 @@ use in your templates to add pagination in your view like below
 
     **[string]** Default language is **English** (**'en'**). Also **French** (**'fr'**), **Portuguese** (**'pt'**) are available
 
+*   info
+
+    **[boolean]** If set to false, information about the table will not be displayed. Default is true.
 
 For making the styling work fine, you should included bootstrap to your project.
 
