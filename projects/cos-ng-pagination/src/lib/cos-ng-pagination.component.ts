@@ -97,10 +97,14 @@ export class CosNgPaginationComponent implements OnInit {
 
   getInfos() {
     this.showing = ((this.current - this.startFrom) * this.size) + 1;
-    if (this.current == this.totalPages) {
-      this.to = this.total;
+    if (this.total == 0) {
+      this.info = false;
     } else {
-      this.to = this.startFrom == 0 ? (this.current + 1) * this.size : this.current * this.size;
+      if (this.current == this.totalPages) {
+        this.to = this.total;
+      } else {
+        this.to = this.startFrom == 0 ? (this.current + 1) * this.size : this.current * this.size;
+      }
     }
   }
 
