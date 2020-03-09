@@ -32,10 +32,8 @@ export class CosNgPaginationComponent implements OnInit {
   ngOnInit() {
     this.startFrom = this.startFrom == 0 ? this.startFrom : 1;
     this.current = this.current < this.startFrom ? this.startFrom : this.current;
-    this.totalPages = Math.ceil(this.total / this.size) - 1 + this.startFrom;
-
+    this.totalPages = Math.ceil(this.total / this.size);
     this.info = this.info == false ? this.info : true;
-
     this.initLang();
     this.getInfos();
     this.getPages(this.totalPages, this.current);
@@ -67,8 +65,11 @@ export class CosNgPaginationComponent implements OnInit {
     }
 
     if(this.total > this.size) {
-      this.pages.push(parseInt(`${totalPages}`));
+      const tp = this.startFrom == 0 ? totalPages - 1 : totalPages;
+      this.pages.push(parseInt(`${tp}`));
     }
+
+    this.pages = Array.from(new Set(this.pages));
   }
 
   goToPage(page: number) {
