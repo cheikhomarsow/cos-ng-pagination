@@ -64,7 +64,7 @@ export class CosNgPaginationComponent implements OnInit {
       }
     }
 
-    if(this.total > this.size) {
+    if (this.total > this.size) {
       const tp = this.startFrom == 0 ? totalPages - 1 : totalPages;
       this.pages.push(parseInt(`${tp}`));
     }
@@ -101,16 +101,13 @@ export class CosNgPaginationComponent implements OnInit {
     if (this.total == 0) {
       this.info = false;
     } else {
-      if(this.size >= this.total) {
+      if (this.current == this.totalPages) {
         this.to = this.total;
-      }else {
-        if (this.current == this.totalPages) {
-          this.to = this.total;
-        } else {
-          this.to = this.startFrom == 0 ? (this.current + 1) * this.size : this.current * this.size;
-        }
+      } else {
+        this.to = this.startFrom == 0 ? (this.current + 1) * this.size : this.current * this.size;
       }
     }
+    this.to = this.to > this.total ? this.total : this.to;
   }
 
   onPageChanged() {
