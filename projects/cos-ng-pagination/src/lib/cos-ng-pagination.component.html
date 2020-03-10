@@ -30,7 +30,7 @@
                 </ng-container>
         
                 <li class="page-item" *ngIf="isDirectionLinksEnabled !== false" (click)="nextPage()"
-                    [ngClass]="{disabled: current == totalPages}">
+                    [ngClass]="{disabled: (( startFrom == 0 && current == totalPages - 1 ) || ( startFrom == 1 && current == totalPages ))}">
                     <a class="page-link" href="javascript:void(0)">{{ nextBtnText }}</a>
                 </li>
             </ul>
