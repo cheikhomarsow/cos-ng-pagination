@@ -89,7 +89,7 @@ export class CosNgPaginationComponent implements OnInit {
   }
 
   nextPage() {
-    if (this.current < this.totalPages) {
+    if (this.current < (this.totalPages - 1 + this.startFrom)) {
       this.current += 1;
       this.onPageChanged();
       this.getPages(this.totalPages, this.current);
